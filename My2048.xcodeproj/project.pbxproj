@@ -19,6 +19,9 @@
 		B66D75F919078768006002BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66D75E119078768006002BA /* UIKit.framework */; };
 		B66D760119078768006002BA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B66D75FF19078768006002BA /* InfoPlist.strings */; };
 		B66D760319078768006002BA /* My2048Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B66D760219078768006002BA /* My2048Tests.m */; };
+		B66D761419078907006002BA /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66D761219078907006002BA /* GameViewController.m */; };
+		B66D761519078907006002BA /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B66D761319078907006002BA /* GameViewController.xib */; };
+		B66D761819078A13006002BA /* TileView.m in Sources */ = {isa = PBXBuildFile; fileRef = B66D761719078A13006002BA /* TileView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,11 @@
 		B66D75FE19078768006002BA /* My2048Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "My2048Tests-Info.plist"; sourceTree = "<group>"; };
 		B66D760019078768006002BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B66D760219078768006002BA /* My2048Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = My2048Tests.m; sourceTree = "<group>"; };
+		B66D761119078907006002BA /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameViewController.h; path = My2048/GameViewController.h; sourceTree = "<group>"; };
+		B66D761219078907006002BA /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameViewController.m; path = My2048/GameViewController.m; sourceTree = "<group>"; };
+		B66D761319078907006002BA /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GameViewController.xib; path = My2048/GameViewController.xib; sourceTree = "<group>"; };
+		B66D761619078A13006002BA /* TileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TileView.h; path = My2048/TileView.h; sourceTree = "<group>"; };
+		B66D761719078A13006002BA /* TileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TileView.m; path = My2048/TileView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,11 @@
 		B66D75D119078768006002BA = {
 			isa = PBXGroup;
 			children = (
+				B66D761619078A13006002BA /* TileView.h */,
+				B66D761719078A13006002BA /* TileView.m */,
+				B66D761119078907006002BA /* GameViewController.h */,
+				B66D761219078907006002BA /* GameViewController.m */,
+				B66D761319078907006002BA /* GameViewController.xib */,
 				B66D75E319078768006002BA /* My2048 */,
 				B66D75FC19078768006002BA /* My2048Tests */,
 				B66D75DC19078768006002BA /* Frameworks */,
@@ -221,6 +234,7 @@
 			files = (
 				B66D75E819078768006002BA /* InfoPlist.strings in Resources */,
 				B66D75F019078768006002BA /* Images.xcassets in Resources */,
+				B66D761519078907006002BA /* GameViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +254,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B66D75EE19078768006002BA /* AppDelegate.m in Sources */,
+				B66D761419078907006002BA /* GameViewController.m in Sources */,
+				B66D761819078A13006002BA /* TileView.m in Sources */,
 				B66D75EA19078768006002BA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
