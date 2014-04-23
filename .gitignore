@@ -5,4 +5,10 @@
 # http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control?
 #
 # Pods/
-
+.DS_Store
+project.xcworkspace
+xcuserdata
+My2048.xcodeproj/*.pbxuser
+My2048.xcodeproj/*.mode*
+My2048.xcodeproj/xcuserdata*
+My2048.xcodeproj/project.xcworkspace
