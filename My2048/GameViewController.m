@@ -41,7 +41,24 @@
         [self.gameView addSubview:theTile];
     }
     self.tileArray = array;
+    [self generateRandomTile];
+    [self generateRandomTile];
+}
+
+- (void)generateRandomTile{
+    NSMutableArray *array = [NSMutableArray array];
+    for (int i=0; i<[self.numMatrixArray count]; i++) {
+        NSNumber *number = [self.numMatrixArray objectAtIndex:i];
+        if ([number intValue] == 0) {
+            [array addObject:[NSNumber numberWithInteger:i]];
+        }
+    }
+    int magicNum = arc4random_uniform(1) ? 2 : 4;
+    int randomIndex = arc4random_uniform([array count]-1);
+    NSNumber *number = [array objectAtIndex:randomIndex];
+    [self.numMatrixArray replaceObjectAtIndex:[number intValue] withObject:[NSNumber numberWithInteger:magicNum]];
     
+    NSLog([NSString stringWithFormat:@"%@", self.numMatrixArray], @"");
 }
 
 - (void)didReceiveMemoryWarning

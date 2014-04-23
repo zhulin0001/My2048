@@ -12,6 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *gameView;
 @property(nonatomic, strong)NSArray *tileArray;
-@property(nonatomic, strong)NSArray *numMatrixArray;
+@property(nonatomic, strong)NSMutableArray *numMatrixArray;
 
 @end
