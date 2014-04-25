@@ -53,8 +53,8 @@
             [array addObject:[NSNumber numberWithInteger:i]];
         }
     }
-    int magicNum = arc4random_uniform(1) ? 2 : 4;
-    int randomIndex = arc4random_uniform([array count]-1);
+    int magicNum = arc4random_uniform(2) ? 2 : 4;
+    int randomIndex = arc4random_uniform([array count]);
     NSNumber *number = [array objectAtIndex:randomIndex];
     [self.numMatrixArray replaceObjectAtIndex:[number intValue] withObject:[NSNumber numberWithInteger:magicNum]];
     
