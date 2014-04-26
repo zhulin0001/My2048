@@ -93,11 +93,37 @@
                 [array addObject:[NSNumber numberWithInt:map[i][j]]];
             }
         }
-        
+        array = [NSMutableArray arrayWithArray:[self computeArray:array]];
     }
     
     printf("direction is %d\n", direction);
 
+}
+
+- (NSArray*)computeArray:(NSArray*)array{
+    NSMutableArray *result = [NSMutableArray array];
+    int count = [array count];
+    if ([array count] < 2) {
+        [result addObjectsFromArray:array];
+    }
+    for (int i=0; i<count; i++) {
+        int j = i + 1;
+        if (j < count) {
+            int a = [[array objectAtIndex:i] intValue];
+            int b = [[array objectAtIndex:j] intValue];
+            if (a == b) {
+                [result addObject:[NSNumber numberWithInt:2*a]];
+                i++, j++;
+            }
+            else{
+                [result addObject:[NSNumber numberWithInt:a]];
+            }
+        }
+        else{
+            [result addObject:[array objectAtIndex:i]];
+        }
+    }
+    return result;
 }
 
 @end
