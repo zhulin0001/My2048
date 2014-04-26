@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GameView.h"
 
-@interface GameViewController : UIViewController
+@interface GameViewController : UIViewController<GameViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIView *gameView;
+@property (weak, nonatomic) IBOutlet GameView *gameView;
 @property(nonatomic, strong)NSArray *tileArray;
 @property(nonatomic, strong)NSMutableArray *numMatrixArray;
 

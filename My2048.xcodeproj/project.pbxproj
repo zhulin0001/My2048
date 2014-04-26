@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7334F565190B3FEB005D1EF5 /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7334F564190B3FEB005D1EF5 /* GameView.m */; };
 		B66D75DE19078768006002BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66D75DD19078768006002BA /* Foundation.framework */; };
 		B66D75E019078768006002BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66D75DF19078768006002BA /* CoreGraphics.framework */; };
 		B66D75E219078768006002BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66D75E119078768006002BA /* UIKit.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7334F563190B3FEB005D1EF5 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
+		7334F564190B3FEB005D1EF5 /* GameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameView.m; sourceTree = "<group>"; };
 		B66D75DA19078768006002BA /* My2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = My2048.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B66D75DD19078768006002BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B66D75DF19078768006002BA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -87,6 +90,8 @@
 			children = (
 				B66D761619078A13006002BA /* TileView.h */,
 				B66D761719078A13006002BA /* TileView.m */,
+				7334F563190B3FEB005D1EF5 /* GameView.h */,
+				7334F564190B3FEB005D1EF5 /* GameView.m */,
 				B66D761119078907006002BA /* GameViewController.h */,
 				B66D761219078907006002BA /* GameViewController.m */,
 				B66D761319078907006002BA /* GameViewController.xib */,
@@ -254,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B66D75EE19078768006002BA /* AppDelegate.m in Sources */,
+				7334F565190B3FEB005D1EF5 /* GameView.m in Sources */,
 				B66D761419078907006002BA /* GameViewController.m in Sources */,
 				B66D761819078A13006002BA /* TileView.m in Sources */,
 				B66D75EA19078768006002BA /* main.m in Sources */,
@@ -457,6 +463,7 @@
 				B66D760819078768006002BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B66D760919078768006002BA /* Build configuration list for PBXNativeTarget "My2048Tests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +472,7 @@
 				B66D760B19078768006002BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

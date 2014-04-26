@@ -33,6 +33,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.gameView.delegate = self;
     NSMutableArray *array = [NSMutableArray array];
     for (int i=0; i<16; i++) {
         TileView *theTile = [[TileView alloc] init];
@@ -43,6 +44,22 @@
     self.tileArray = array;
     [self generateRandomTile];
     [self generateRandomTile];
+    [self refreshTitles];
+}
+
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)refreshTitles{
+    for (int i=0; i<16; i++) {
+        TileView *theTile = [self.tileArray objectAtIndex:i];
+        NSNumber *number = [self.numMatrixArray objectAtIndex:i];
+        [theTile setNumber:[number intValue]];
+    }
 }
 
 - (void)generateRandomTile{
@@ -61,10 +78,26 @@
     NSLog([NSString stringWithFormat:@"%@", self.numMatrixArray], @"");
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)CaughtDragDirection:(_DIRECTION)direction{
+    int map[4][4] = {0};
+    for (int i=0; i<4; i++) {
+        for (int j=0; j<4; j++) {
+            map[i][j] = [[self.numMatrixArray objectAtIndex:4*i+j] intValue];
+        }
+    }
+    
+    for (int j=0; j<4; j++) {
+        NSMutableArray *array = [NSMutableArray array];
+        for (int i=0; i<4; i++) {
+            if (map[i][j] != 0) {
+                [array addObject:[NSNumber numberWithInt:map[i][j]]];
+            }
+        }
+        
+    }
+    
+    printf("direction is %d\n", direction);
+
 }
 
 @end
