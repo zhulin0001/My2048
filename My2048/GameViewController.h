@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet GameView *gameView;
 @property(nonatomic, strong)NSArray *tileArray;
 @property(nonatomic, strong)NSMutableArray *numMatrixArray;
+- (IBAction)move:(id)sender;
 
 @end

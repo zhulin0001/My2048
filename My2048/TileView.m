@@ -18,7 +18,7 @@
     if (self) {
         // Initialization code
         self.numberLabel = [[UILabel alloc] initWithFrame:self.frame];
-        self.numberLabel.text = @"0";
+        self.numberLabel.text = @"";
         self.numberLabel.textAlignment = NSTextAlignmentCenter;
         self.numberLabel.textColor = [UIColor whiteColor];
         [self addSubview:self.numberLabel];
@@ -29,6 +29,9 @@
 
 - (void)setNumber:(int)number{
     self.numberLabel.text = [NSString stringWithFormat:@"%d", number];
+    if (number == 0) {
+        self.numberLabel.text = @"";
+    }
 }
 
 /*

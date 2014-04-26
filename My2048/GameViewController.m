@@ -86,6 +86,15 @@
         }
     }
     
+    for (int i=0; i<4; i++) {
+        for (int j=0; j<4; j++) {
+            printf("%d \t", map[i][j]);
+        }
+        printf("\n");
+    }
+    
+    printf("\n");
+
     for (int j=0; j<4; j++) {
         NSMutableArray *array = [NSMutableArray array];
         for (int i=0; i<4; i++) {
@@ -94,9 +103,24 @@
             }
         }
         array = [NSMutableArray arrayWithArray:[self computeArray:array]];
+        for (int k=0; k<4; k++) {
+            map[k][j] = k < [array count] ? [[array objectAtIndex:k] intValue] : 0;
+        }
     }
     
-    printf("direction is %d\n", direction);
+    NSMutableArray *newArray = [NSMutableArray array];
+    for (int i=0; i<4; i++) {
+        for (int j=0; j<4; j++) {
+            [newArray addObject:[NSNumber numberWithInt:map[i][j]]];
+            printf("%d \t", map[i][j]);
+        }
+        printf("\n");
+    }
+    self.numMatrixArray = newArray;
+    [self generateRandomTile];
+    [self refreshTitles];
+
+//    printf("direction is %d\n", direction);
 
 }
 
@@ -106,24 +130,29 @@
     if ([array count] < 2) {
         [result addObjectsFromArray:array];
     }
-    for (int i=0; i<count; i++) {
-        int j = i + 1;
-        if (j < count) {
-            int a = [[array objectAtIndex:i] intValue];
-            int b = [[array objectAtIndex:j] intValue];
-            if (a == b) {
-                [result addObject:[NSNumber numberWithInt:2*a]];
-                i++, j++;
+    else{
+        for (int i=0; i<count; i++) {
+            int j = i + 1;
+            if (j < count) {
+                int a = [[array objectAtIndex:i] intValue];
+                int b = [[array objectAtIndex:j] intValue];
+                if (a == b) {
+                    [result addObject:[NSNumber numberWithInt:2*a]];
+                    i++, j++;
+                }
+                else{
+                    [result addObject:[NSNumber numberWithInt:a]];
+                }
             }
             else{
-                [result addObject:[NSNumber numberWithInt:a]];
+                [result addObject:[array objectAtIndex:i]];
             }
-        }
-        else{
-            [result addObject:[array objectAtIndex:i]];
         }
     }
     return result;
 }
 
+- (IBAction)move:(id)sender {
+    [self CaughtDragDirection:1];
+}
 @end
