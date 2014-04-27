@@ -10,8 +10,8 @@
 
 typedef enum : NSUInteger {
     DIRECTION_UP = 1,
-    DIRECTION_DOWN,
     DIRECTION_LEFT,
+    DIRECTION_DOWN,
     DIRECTION_RIGHT,
 } _DIRECTION;
 

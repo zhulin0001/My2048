@@ -70,12 +70,17 @@
             [array addObject:[NSNumber numberWithInteger:i]];
         }
     }
-    int magicNum = arc4random_uniform(2) ? 2 : 4;
-    int randomIndex = arc4random_uniform([array count]);
-    NSNumber *number = [array objectAtIndex:randomIndex];
-    [self.numMatrixArray replaceObjectAtIndex:[number intValue] withObject:[NSNumber numberWithInteger:magicNum]];
-    
-    NSLog([NSString stringWithFormat:@"%@", self.numMatrixArray], @"");
+    if ([array count] == 0) {
+        NSLog(@"没的添加了。挂了");
+    }
+    else{
+        int magicNum = arc4random_uniform(2) ? 2 : 4;
+        int randomIndex = arc4random_uniform([array count]);
+        NSNumber *number = [array objectAtIndex:randomIndex];
+        [self.numMatrixArray replaceObjectAtIndex:[number intValue] withObject:[NSNumber numberWithInteger:magicNum]];
+        
+        NSLog([NSString stringWithFormat:@"%@", self.numMatrixArray], @"");
+    }
 }
 
 - (void)CaughtDragDirection:(_DIRECTION)direction{
@@ -86,15 +91,11 @@
         }
     }
     
-    for (int i=0; i<4; i++) {
-        for (int j=0; j<4; j++) {
-            printf("%d \t", map[i][j]);
-        }
-        printf("\n");
+    int changeCount = 4-(direction-1);
+    while (changeCount--) {
+        changeMatrixToLeft(map);
     }
     
-    printf("\n");
-
     for (int j=0; j<4; j++) {
         NSMutableArray *array = [NSMutableArray array];
         for (int i=0; i<4; i++) {
@@ -106,6 +107,11 @@
         for (int k=0; k<4; k++) {
             map[k][j] = k < [array count] ? [[array objectAtIndex:k] intValue] : 0;
         }
+    }
+    
+    changeCount = direction-1;
+    while (changeCount--) {
+        changeMatrixToLeft(map);
     }
     
     NSMutableArray *newArray = [NSMutableArray array];
@@ -122,6 +128,17 @@
 
 //    printf("direction is %d\n", direction);
 
+}
+
+void changeMatrixToLeft(int map[4][4]){
+    int newMap[4][4] = {0};
+    for (int i=0; i<4; i++) {
+        for (int j=0; j<4; j++) {
+            newMap[3-j][i] = map[i][j];
+        }
+    }
+    
+    memcpy(map, newMap, sizeof(int)*16);
 }
 
 - (NSArray*)computeArray:(NSArray*)array{
